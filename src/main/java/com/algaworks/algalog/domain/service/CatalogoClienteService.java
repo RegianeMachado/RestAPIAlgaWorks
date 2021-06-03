@@ -13,6 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class CatalogoClienteService {
     private ClienteRepository clienteRepository;
 
+    public Cliente buscar(Long clienteID) {
+       return  clienteRepository.findById(clienteID)
+                .orElseThrow(() -> new NegocioException("Cliente não encontrado"));
+    }
+
     @Transactional
     public Cliente salvar(Cliente cliente){
         boolean emailEmUso = clienteRepository.findByEmail(cliente.getEmail())
