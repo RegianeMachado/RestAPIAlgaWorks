@@ -10,4 +10,5 @@ public class AlgalogApiApplication {
 		SpringApplication.run(AlgalogApiApplication.class, args);
 	}
 
+
 }
